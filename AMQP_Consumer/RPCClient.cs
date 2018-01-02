@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AMQP_Common;
+using Newtonsoft.Json;
 
 namespace AMQP_Consumer
 {
@@ -53,11 +54,12 @@ namespace AMQP_Consumer
 
             DateTime start = DateTime.Now;
 
+            
+            var messageBytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
 
-            var messageBytes = Encoding.UTF8.GetBytes("{'Equations': [{'angleId': 1,'value':90,'maxValue': 135,'minValue': 45}");
             channel.QueueDeclare(queue: string.Format("{0}_{1}", Broker.que_name, userId), durable: false, exclusive: false, autoDelete: false, arguments: null);
             channel.BasicQos(0, 1, false);
-            //var messageBytes = Encoding.UTF8.GetBytes("sdfsd");
+
             channel.BasicPublish(exchange: "",
                                  routingKey: string.Format("{0}_{1}", Broker.que_name, userId),
                                  basicProperties: props,
@@ -80,7 +82,7 @@ namespace AMQP_Consumer
                         Response_Message obj = null;
                         try
                         {
-                            //obj = JsonConvert.DeserializeObject<Response_Message>(msg);
+                            obj = JsonConvert.DeserializeObject<Response_Message>(msg);
 
                             obj.request_start = start;
                             obj.request_end = DateTime.Now;

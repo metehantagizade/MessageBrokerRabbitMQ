@@ -8,15 +8,26 @@ namespace RabbitMQ_Console_App
 {
     public class Program
     {
-        public static AMQP_Producer.RabbitMqService service;
-        static void Main(string[] args)
-        {
-            CreateRabbitConnection(1);
-        }
+        public static AMQP_Producer.RabbitMqService service = new AMQP_Producer.RabbitMqService("1");
 
-        public static void CreateRabbitConnection(int userId)
+
+        public static void Main(string[] args)
         {
-            service = new AMQP_Producer.RabbitMqService(userId.ToString());
+            
+        }
+        
+        public void CreateRabbitConnection()
+        {
+            service.AMQP_Request_Start += RabbitMqService_AMQP_Request_Start;
+            service.AMQP_Request += RabbitMqService_AMQP_Request;
+        }
+        private void RabbitMqService_AMQP_Request(AMQP_Producer.AMQP_EventArgs e)
+        {
+            //this.SuggetionList.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() => CreateSuggestionCard()));
+        }
+        private void RabbitMqService_AMQP_Request_Start()
+        {
+            //this.SuggetionList.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() => SetSynchronizeInfoToVisible()));
         }
 
     }

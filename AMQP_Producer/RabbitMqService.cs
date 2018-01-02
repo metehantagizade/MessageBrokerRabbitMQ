@@ -122,12 +122,20 @@ namespace AMQP_Producer
                                 {
                                     //RaiseEvent_Start();
                                 }
-                                catch { }
+                                catch(Exception ex)
+                                {
+
+                                }
+
                                 var msg = Encoding.UTF8.GetString(body);
                                 ClientMessage message = null;
                                 try
                                 {
-                                    //message = Newtonsoft.Json.JsonConvert.DeserializeObject<ClientMessage>(msg);
+                                    //In web application before send data to broker we can serialize data as json in ClientMessage format, inside this function we can deserialize recived data to ClientMessage object
+                                    message = Newtonsoft.Json.JsonConvert.DeserializeObject<ClientMessage>(msg);
+                                    //message.userId = userId;
+                                    //message.MessageType = Client_MessageType.sendGameSuggestion;
+                                    //message.Message_Content = msg;
                                 }
                                 catch(Exception ex)
                                 {
@@ -135,6 +143,7 @@ namespace AMQP_Producer
                                 }
 
                                 ClientMessageDispatcher dispatcher = AMQP_Common.Dispatcher.DispatcherHelper.GetDispatcher(message);
+                                // Write data to database
                                 Response_Message obj = dispatcher.DispatchMessage(message);
                                 if (obj != null)
                                 {
