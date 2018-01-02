@@ -19,9 +19,9 @@ namespace AMQP_Common
         {
             ConnectionFactory connectionFactory = new ConnectionFactory();
 
-            connectionFactory.HostName = "81.215.1.72"; //Set Ip address of message broker
-            connectionFactory.UserName = "cplayer"; // define username and password on Message Broker Server
-            connectionFactory.Password = "tiga1234"; // write password of message broker account
+            connectionFactory.HostName = ""; //Set Ip address of message broker
+            connectionFactory.UserName = ""; // define username and password on Message Broker Server
+            connectionFactory.Password = ""; // write password of message broker account
             //connectionFactory.Port = 15672; // İf Server has port then set port in this line (default port for web panel is 15672)
             try
             {
