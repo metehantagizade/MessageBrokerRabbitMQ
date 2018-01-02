@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{B2A5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalEntities", "LocalEntities\LocalEntities.csproj", "{AA04D9F5-110F-4826-A0D2-680472E66D73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_Console_App", "RabbitMQ_Console_App\RabbitMQ_Console_App.csproj", "{CABC661B-1BDE-4CF5-8141-93E7A907DDDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{AA04D9F5-110F-4826-A0D2-680472E66D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA04D9F5-110F-4826-A0D2-680472E66D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA04D9F5-110F-4826-A0D2-680472E66D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CABC661B-1BDE-4CF5-8141-93E7A907DDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABC661B-1BDE-4CF5-8141-93E7A907DDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABC661B-1BDE-4CF5-8141-93E7A907DDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABC661B-1BDE-4CF5-8141-93E7A907DDDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{F4A37048-EEB5-42A0-B9CB-F7FA0EBBB0C9} = {473A9564-6838-4ECE-9B89-0DB9E7FF3177}
 		{0220117B-1BA1-40F6-8BC1-29D9641CC8D2} = {473A9564-6838-4ECE-9B89-0DB9E7FF3177}
 		{AA04D9F5-110F-4826-A0D2-680472E66D73} = {B2A58911-991D-4179-A331-526F9823BDDB}
+		{CABC661B-1BDE-4CF5-8141-93E7A907DDDC} = {B2A58911-991D-4179-A331-526F9823BDDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDF88804-398F-4472-A46D-D7C3202D0B28}

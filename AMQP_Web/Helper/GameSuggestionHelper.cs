@@ -21,7 +21,7 @@ namespace AMQP_Web.Helper
             AMQP_Consumer.RPCClient client = new AMQP_Consumer.RPCClient(userId);
             ClientMessage message = new ClientMessage();
             message.userId = userId;
-            message.MessageType = Client_MessageType.DataUsedByDesktopApplication;
+            message.MessageType = Client_MessageType.sendGameSuggestion;
             message.Message_Content = gameAssignmentModel;
             client.Call(message);
             client.Close();
